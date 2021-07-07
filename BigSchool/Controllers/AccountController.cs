@@ -137,6 +137,8 @@ namespace BigSchool.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Register()
         {
             return View();
@@ -151,7 +153,7 @@ namespace BigSchool.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
