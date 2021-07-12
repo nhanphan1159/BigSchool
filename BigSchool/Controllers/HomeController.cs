@@ -23,14 +23,14 @@ namespace BigSchool.Controllers
 
         public ActionResult Index()
         {
-            var upconmingCourse = _dbContext.Courses
+            var upconmingCourses = _dbContext.Courses
                 .Include(c => c.Lecturer)
                 .Include(c => c.Category)
                 .Where(c => c.DateTime > DateTime.Now);
 
             var viewModel = new CoursesViewModel
             {
-                UpcommingCourse = upconmingCourse,
+                UpcommingCourses = upconmingCourses,
                 ShowAction = User.Identity.IsAuthenticated
             };
             return View(viewModel);
