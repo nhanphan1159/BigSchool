@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BigSchool.Models.Course>
+﻿@model BigSchool.ViewModels.CoursesViewModel
 @{
     ViewBag.Title = "Home Page";
 }
@@ -40,7 +40,7 @@
     </div>
 </div>
 <ul class="course">
-    @foreach(var course in Model)
+    @foreach(var course in Model.UpCommingCourses)
             {
                 <li>
                     <div class="date">

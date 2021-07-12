@@ -9,8 +9,7 @@ namespace BigSchool.ViewModels
 {
     public class CourseViewModel
     {   [Required]
-        public IEnumerable<Course> UpcommingCourse { set; get; }
-        public bool ShowAction { set; get; }
+       
         public string Place { get; set; }
         public string Date { get; set; }
         public string Time { get; set; }
