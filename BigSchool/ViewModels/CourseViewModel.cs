@@ -8,15 +8,26 @@ using System.Web;
 namespace BigSchool.ViewModels
 {
     public class CourseViewModel
-    {   [Required]
+    {  
+        public int Id { get; set; }
+        [Required]
        
         public string Place { get; set; }
+        [Required]
+        [FutureDate]
         public string Date { get; set; }
+        [Required]
+        [ValidTime]
         public string Time { get; set; }
-
+        [Required]
         public byte Category { get; set; }
 
         public IEnumerable<Category> Categories { get; set; }
+        public string heading { set; get; }
+        public string Acction
+        {
+            get { return (Id != 0) ? "Update" : "Create"; }
+        }
 
         public DateTime GetDateTime()
         {

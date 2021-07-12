@@ -32,6 +32,14 @@
     top:0;
     left:70px;
 }
+.course>li.action{
+    display:none;
+    left:70px;
+    position:absolute;
+}
+.course >li:hover.action{
+    display:block;
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
