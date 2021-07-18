@@ -1,6 +1,7 @@
 ﻿using BigSchool.DTOs;
 using BigSchool.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.Exchange.WebServices.Data;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,12 @@ namespace BigSchool.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
-        /*[HttpPost]
+        [HttpPost]
                  public IHttpActionResult Attend(AttendanceDto attendanceDto)
                  {
 
                      var userId = User.Identity.GetUserId();
-                     if (_dbContext.Attendances.Any(a => a.AttendeeId == userID && a.CourseId == attendaneceDto.CourseId))
+                     if (_dbContext.Attendances.Any(a => a.AttendeeId == UserId && a.CourseId == attendaneceDto.CourseId))
                          return BadRequest("the Attendence alredy exitsts");
                      var attendane = new Attendance
                      {
@@ -33,7 +34,7 @@ namespace BigSchool.Controllers
                      _dbContext.Attendances.Add(Attendance);
                      _dbContext.SaveChanges();
                      return Ok();
-             }*/
+             }
 
 
     }
